@@ -28,7 +28,12 @@ class App extends Component {
     if (isProductExists === undefined) {
       this.setState(prevState => ({cartList: [...prevState.cartList, product]}))
     } else {
-      this.incrementCartItemQuantity(product)
+      const updatedCartList = cartList.map(item =>
+        item.id === product.id
+          ? {...item, quantity: item.quantity + product.quantity}
+          : item,
+      )
+      this.setState({cartList: updatedCartList})
     }
   }
 
@@ -50,28 +55,6 @@ class App extends Component {
     })
     this.setState({cartList: updatedList})
   }
-
-  /* decrementCartItemQuantity = productDetails => {
-    const {cartList} = this.state
-    let {quantity} = productDetails
-    if (quantity === 1) {
-      const filteredList = cartList.filter(
-        eachProduct => eachProduct.id !== productDetails.id,
-      )
-      this.setState({cartList: filteredList})
-    } else {
-      quantity -= 1
-      const updatedProductDetails = {
-        ...productDetails,
-        quantity,
-      }
-      const filteredList = cartList.filter(
-        eachProduct => eachProduct.id !== productDetails.id,
-      )
-      const updatedList = [...filteredList, updatedProductDetails]
-      this.setState({cartList: updatedList})
-    }
-  } */
 
   decrementCartItemQuantity = productDetails => {
     const {cartList} = this.state

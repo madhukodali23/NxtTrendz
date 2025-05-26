@@ -1,0 +1,45 @@
+.order-total-heading {
+  color: #616e7c;
+  font-family: 'Roboto';
+  font-size: 24px;
+  margin-bottom: 2px;
+}
+
+@media screen and (max-width: 767px) {
+  .order-total-heading {
+    text-align: right;
+  }
+}
+
+.order-total-price {
+  color: #171f46;
+}
+
+.order-list-items {
+  font-family: 'Roboto';
+  font-size: 16px;
+  color: #616e7c;
+}
+
+@media screen and (max-width: 767px) {
+  .order-list-items {
+    text-align: right;
+  }
+}
+
+.checkout-button {
+  font-family: 'Roboto';
+  color: #ffffff;
+  border-width: 0px;
+  border-radius: 4px;
+  background-color: #0b69ff;
+  padding: 12px;
+  width: 100%;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 767px) {
+  .cart-summary-container {
+    width: 100%;
+  }
+}
